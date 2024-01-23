@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Energy</title>
+    <title>{% block title %}My energy app{% endblock %}</title>
 </head>
+
 <body>
+    <div id="sidebar">
+        {% block sidebar %}
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/energy/meters/">Meters</a></li>
+        </ul>
+        {% endblock %}
+    </div>
 
-<h1>Energy app</h1>
-
-<div id="content">
-    {% block content %}
-    {% endblock %}
-</div>
+    <div id="content">
+        {% block content %}
+            {{ message }}
+        {% endblock %}
+    </div>
 
 </body>
 </html>

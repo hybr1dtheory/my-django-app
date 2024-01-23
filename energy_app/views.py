@@ -1,14 +1,14 @@
-from django.http import HttpResponse
 from django.shortcuts import render
 
 
-def index(request):
-    return HttpResponse("Hello, world! This is the index of my very first app:)")
+def energy_main(request):
+    mess = {"message": "Hello, world! This is the index of my very first app:)"}
+    return render(request, "energy.html", context=mess)
 
 
-def return_energy_html(request):
-    some_data = {"username": "some user",
-                 "email": "xxx@gmail.com",
-                 "name": "Panteleymon"
+def return_energy_meters(request):
+    some_data = {"meter_name": "Substation #1",
+                 "phases": 3,
+                 "kt": 1200
                  }
-    return render(request, "energy_child.html", context={"some_data": some_data})
+    return render(request, "energy_meters.html", context={"some_data": some_data})
