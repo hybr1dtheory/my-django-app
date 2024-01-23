@@ -1,0 +1,9 @@
+{% extends "energy.html" %}
+
+{% block content %}
+    {% for k, v in some_data.items %}
+    <p>
+        {{ k }} : {{ v }}
+    </p>
+    {% endfor %}
+{% endblock %}

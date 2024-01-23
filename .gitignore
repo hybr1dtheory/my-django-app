@@ -1,0 +1,4 @@
+*.pyc
+my-app-venv/
+.env
+.idea/
